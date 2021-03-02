@@ -180,17 +180,17 @@ function gotRemoteStream(event){
 }
 // Handler to be called whenever a new local ICE candidate becomes available
 function gotLocalIceCandidate(event){
-if (event.candidate) {
-// Add candidate to the remote PeerConnection
-remotePeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
-log("Local ICE candidate: \n" + event.candidate.candidate);
-}
+    if (event.candidate) {
+    // Add candidate to the remote PeerConnection
+    remotePeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
+        log("Local ICE candidate: \n" + event.candidate.candidate);
+    }
 }
 // Handler to be called whenever a new remote ICE candidate becomes available
 function gotRemoteIceCandidate(event){
-if (event.candidate) {
-// Add candidate to the local PeerConnection
-localPeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
-log("Remote ICE candidate: \n " + event.candidate.candidate);
-}
+    if (event.candidate) {
+    // Add candidate to the local PeerConnection
+    localPeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
+        log("Remote ICE candidate: \n " + event.candidate.candidate);
+    }
 }
